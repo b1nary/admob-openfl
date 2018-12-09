@@ -121,6 +121,7 @@ class Admob extends EventDispatcher
 	{
 		//trace("onStatus: "+code);
 		var ae:AdmobEvent = null;
+		trace(code);
 		switch(code)
 		{
 			case "INIT_OK":

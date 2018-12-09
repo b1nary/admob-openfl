@@ -1,7 +1,7 @@
 package com.pozirk.ads;
 
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-import com.google.android.gms.ads.reward.RewardItem
+import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.AdRequest;
 import org.haxe.lime.HaxeObject;
 
@@ -37,8 +37,6 @@ public void onRewardedVideoAdFailedToLoad(int errorCode) {
     _callback.call("onStatus", new Object[] {_who+"_ON_REWARDED_VIDEO_AD_FAILED_TO_LOAD", ""});
 }
 
-}
-
 @Override
 public void onRewardedVideoAdLoaded() {
     _callback.call("onStatus", new Object[] {_who+"_ON_REWARDED_VIDEO_AD_LOADED", ""});
@@ -57,4 +55,7 @@ public void onRewardedVideoStarted() {
 @Override
 public void onRewardedVideoCompleted() {
     _callback.call("onStatus", new Object[] {_who+"_ON_REWARDED_VIDEO_COMPLETED", ""});
+}
+
+
 }

@@ -33,6 +33,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
 
 public class Admob extends Extension
 {
@@ -41,17 +42,20 @@ public class Admob extends Extension
   protected static RelativeLayout _parentView;
 	protected static RelativeLayout.LayoutParams _params;
   protected static InterstitialAd _interstitial;
-  protected static int _bannerOnTop = 0;
+  protected static RewardedVideoAd _rewarded;
+protected static int _bannerOnTop = 0;
 	protected static HaxeObject _callback = null;
 	protected static AdmobListener _listenerAd = null;
 	protected static AdmobListener _listenerInter = null;
-	
+	protected static AdmobRewardListener _listenerReward = null;
+
 	public static void init(HaxeObject callback)
 	{
 		_callback = callback;
 		_listenerAd = new AdmobListener(_callback, "AD");
 		_listenerInter = new AdmobListener(_callback, "INTERSTITIAL");
-		
+		_listenerReward = new AdmobRewardListener(_callback, "REWARD");
+
 		_parentView = new RelativeLayout(Extension.mainActivity);
 		Extension.mainActivity.runOnUiThread(new Runnable()
 		{
@@ -177,6 +181,43 @@ public class Admob extends Extension
 			}
 		});
   }
+// Rewarded Ads ("Monkey Patch")
+		public static void cacheRewarded(final String adID)
+  {
+		Extension.mainActivity.runOnUiThread(new Runnable()
+		{
+			public void run()
+			{
+				//Log.d("admob", "cacheInterstitial: "+adID);
+				_rewarded = new RewardedVideoAd(Extension.mainActivity);
+				
+				
+				
+				.setAdUnitId(adID);
+
+				AdRequest adRequest = null;
+				adRequest = new AdRequest.Builder().build();
+				
+				_rewarded.loadAd(adRequest);
+				_rewarded.setAdListener(_listenerReward);
+			}
+		});
+  }
+  
+  public static void showRewarded()
+  {
+		Extension.mainActivity.runOnUiThread(new Runnable()
+		{
+			public void run()
+			{
+				//Log.d("admob", "showInterstitial");
+				if(_rewarded != null && _rewarded.isLoaded() == true)
+					_rewarded.show();
+			}
+		});
+  }
+	
+	
 	
 	@Override
 	public void onResume()

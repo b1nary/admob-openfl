@@ -190,10 +190,7 @@ protected static int _bannerOnTop = 0;
 			{
 				//Log.d("admob", "cacheInterstitial: "+adID);
 				_rewarded = new RewardedVideoAd(Extension.mainActivity);
-				
-				
-				
-				.setAdUnitId(adID);
+				_rewarded.setAdUnitId(adID);
 
 				AdRequest adRequest = null;
 				adRequest = new AdRequest.Builder().build();

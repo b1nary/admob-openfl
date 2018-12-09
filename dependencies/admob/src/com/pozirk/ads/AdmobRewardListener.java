@@ -10,7 +10,7 @@ public class AdmobRewardListener extends RewardedVideoAdListener
 	protected HaxeObject _callback = null;
 	protected String _who = null;
 	
-	public AdmobListener(HaxeObject callback, String who)
+	public AdmobRewardListener(HaxeObject callback, String who)
 	{
 		_callback = callback;
 		_who = who;

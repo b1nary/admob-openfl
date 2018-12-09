@@ -1,10 +1,12 @@
-**I'm not using and not supporting this extension anymore. Please use/contribute to https://github.com/openfl/extension-admob**<br />
-Although, extension is still working fine as of June 16, 2017.
+I had issues getting anything working with `extension-admob` i found this lib by @pozirk which worked but didnt offer Rewarded ads yet and used the wrong JNI for a current flixel setup. This fork tries to update the extension as well as including additional Admob features to offer Rewarded Ads. 
+
+---
+`Copy pasta:`
 
 Introduction
 ============
 
-Admob OpenFL Extension. (Adnroid only)
+Admob OpenFL Extension. (Android only)
 More info on Admob: https://developers.google.com/mobile-ads-sdk/
 
 

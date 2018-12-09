@@ -1,7 +1,7 @@
 package com.pozirk.ads;
 
-//import android.util.Log;
-import com.google.android.gms.ads.RewardedVideoAdListener;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.AdRequest;
 import org.haxe.lime.HaxeObject;
 

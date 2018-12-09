@@ -23,7 +23,7 @@
 package com.pozirk.ads;
 
 import openfl.events.EventDispatcher;
-import openfl.utils.JNI;
+import lime.system.JNI;
 
 class Admob extends EventDispatcher
 {
@@ -56,7 +56,7 @@ class Admob extends EventDispatcher
 	public function init()
 	{
 		if(_initFunc == null)
-			_initFunc = openfl.utils.JNI.createStaticMethod(EXT_ADMOB, "init", "(Lorg/haxe/lime/HaxeObject;)V");
+			_initFunc = lime.system.JNI.createStaticMethod(EXT_ADMOB, "init", "(Lorg/haxe/lime/HaxeObject;)V");
 			
 		_initFunc(this);
 	}
@@ -73,7 +73,7 @@ class Admob extends EventDispatcher
 		if(_inited == 1)
 		{
 			if(_showAdFunc == null)
-				_showAdFunc = openfl.utils.JNI.createStaticMethod(EXT_ADMOB, "showAd", "(Ljava/lang/String;III)V");
+				_showAdFunc = lime.system.JNI.createStaticMethod(EXT_ADMOB, "showAd", "(Ljava/lang/String;III)V");
 			
 			_showAdFunc(adID, size, halign, valign);
 		}
@@ -84,7 +84,7 @@ class Admob extends EventDispatcher
 	public function hideAd():Void
 	{
 		if(_hideAdFunc == null)
-			_hideAdFunc = openfl.utils.JNI.createStaticMethod(EXT_ADMOB, "hideAd", "()V");
+			_hideAdFunc = lime.system.JNI.createStaticMethod(EXT_ADMOB, "hideAd", "()V");
 			
 		_hideAdFunc();
 	}
@@ -98,7 +98,7 @@ class Admob extends EventDispatcher
 		if(_inited == 1)
 		{
 			if(_cacheInterstitialFunc == null)
-				_cacheInterstitialFunc = openfl.utils.JNI.createStaticMethod(EXT_ADMOB, "cacheInterstitial", "(Ljava/lang/String;)V");
+				_cacheInterstitialFunc = lime.system.JNI.createStaticMethod(EXT_ADMOB, "cacheInterstitial", "(Ljava/lang/String;)V");
 			
 			_cacheInterstitialFunc(adID);
 		}
@@ -112,7 +112,7 @@ class Admob extends EventDispatcher
 	public function showInterstitial():Void
 	{
 		if(_showInterstitialFunc == null)
-			_showInterstitialFunc = openfl.utils.JNI.createStaticMethod(EXT_ADMOB, "showInterstitial", "()V");
+			_showInterstitialFunc = lime.system.JNI.createStaticMethod(EXT_ADMOB, "showInterstitial", "()V");
 			
 		_showInterstitialFunc();
 	}

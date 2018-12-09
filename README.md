@@ -1,4 +1,4 @@
-I had issues getting anything working with `extension-admob` i found this lib by @pozirk which worked but didnt offer Rewarded ads yet and used the wrong JNI for a current flixel setup. This fork tries to update the extension as well as including additional Admob features to offer Rewarded Ads. 
+I had issues getting anything working with `extension-admob` i found this lib by [@pozirk](/pozirk/admob-openfl) which worked but didnt offer Rewarded ads yet and used the wrong JNI for a current flixel setup. This fork tries to update the extension as well as including additional Admob features to offer Rewarded Ads. 
 
 ---
 `Copy pasta:`
